@@ -52,7 +52,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         'profile',
       ],
       protectedResourceMap: [
-        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
+        ['https://graph.microsoft.com/v1.0/me/onlineMeetings', ['user.read', 'OnlineMeetings.ReadWrite']],
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']],
       ],
       extraQueryParameters: {}
     })
