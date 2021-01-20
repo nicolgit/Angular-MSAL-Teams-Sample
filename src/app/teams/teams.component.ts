@@ -6,11 +6,11 @@ import { InteractionRequiredAuthError, AuthError } from 'msal';
 const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-teams',
+  templateUrl: './teams.component.html',
+  styleUrls: ['./teams.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class TeamsComponent implements OnInit {
   profile;
   profile2json;
   accessToken: string;

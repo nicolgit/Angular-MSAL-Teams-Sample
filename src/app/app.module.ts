@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TeamsComponent } from './teams/teams.component';
 import { HomeComponent } from './home/home.component';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
@@ -20,7 +21,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
   declarations: [
     AppComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    TeamsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +35,9 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     AppRoutingModule,
     MsalModule.forRoot({
       auth: {
-        clientId: 'Enter_the_Application_Id_Here',
-        authority: 'Enter_the_Cloud_Instance_Id_HereEnter_the_Tenant_Info_Here',
-        redirectUri: 'Enter_the_Redirect_Uri_Here',
+        clientId: '8bcd9674-40e6-4a0e-81cd-4d391c69111f',
+        authority: 'https://login.microsoftonline.com/common',
+        redirectUri: 'http://localhost:4200',
       },
       cache: {
         cacheLocation: 'localStorage',
@@ -50,7 +52,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         'profile',
       ],
       protectedResourceMap: [
-        ['Enter_the_Graph_Endpoint_Herev1.0/me', ['user.read']]
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
       ],
       extraQueryParameters: {}
     })
