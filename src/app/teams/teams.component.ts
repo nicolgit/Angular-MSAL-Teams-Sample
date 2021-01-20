@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MsalService } from '@azure/msal-angular';
 import { HttpClient } from '@angular/common/http';
 import { InteractionRequiredAuthError, AuthError } from 'msal';
+import { CreateMeetingResponse } from '../model/CreateMeetingResponse';
 
 const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me';
 const GRAPH_TEAMSENDPOINT = 'https://graph.microsoft.com/v1.0/me/onlineMeetings';
@@ -61,7 +62,7 @@ export class TeamsComponent implements OnInit {
 
     this.http.post(GRAPH_TEAMSENDPOINT, { })
     .subscribe({
-      next: (result) => {
+      next: (result: CreateMeetingResponse) => {
         this.result = result;
         this.result2json = JSON.stringify(result);
         this.meetingURL = result.joinUrl;
